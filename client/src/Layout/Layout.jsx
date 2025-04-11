@@ -12,7 +12,7 @@ const Layout = () => {
       <AppSidebar />
       <main className="w-full h-screen">
         <div className="h-[4rem]"></div>
-        <div className="min-h-[calc(100%-6.5rem)]">
+        <div className="min-h-[calc(100%-7.5rem)]">
           <Outlet />
         </div>
         <Footer className="h-[4rem]" />
