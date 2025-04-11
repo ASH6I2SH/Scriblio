@@ -62,7 +62,9 @@ const AppSidebar = () => {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            <SidebarMenuItem > {/*className="mt-4"*/}
+            <SidebarMenuItem>
+              {" "}
+              {/*className="mt-4"*/}
               <SidebarMenuButton asChild>
                 <Link to={RouteIndex}>
                   <IoHomeOutline /> Home

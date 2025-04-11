@@ -79,7 +79,7 @@ const SignUp = () => {
   }
   return (
     <div className="flex justify-center items-center h-screen">
-      <Card className="w-[400px] px-5 min-h-[80%]">
+      <Card className="w-[60vw] px-5 min-h-[80%]">
         <CardHeader>
           <div className="logo flex justify-center items-center">
             <Link
@@ -95,23 +95,23 @@ const SignUp = () => {
               <span className="text-[#6a00ff] text-1xl sm:text-2xl">O</span>
             </Link>
           </div>
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="text-2xl font-bold text-center mb-3">
             Create Your Account
           </CardTitle>
-        </CardHeader>
-
+          <GoogleLogin  />
         <div>
-          <GoogleLogin />
-          <div className="border mt-3 flex justify-center items-center">
+          <div className="border mt-5 flex justify-center items-center">
             <span className=" absolute bg-background backdrop-opacity-[50%] text-foreground text-sm rounded-full">
               Or
             </span>
           </div>
         </div>
+        </CardHeader>
 
-        <CardContent className="-mt-1.5">
+
+        <CardContent >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
               <div>
                 <FormField
                   control={form.control}
