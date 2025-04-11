@@ -104,7 +104,7 @@ const Topbar = () => {
 
       {/* Search Box Section */}
       <div className="flex-1 flex justify-center">
-        <div className="relative w-full max-w-2xl px-4 hidden md:block">
+        <div className="relative w-full max-w-2xl px-4 bg-background hidden md:block">
           <SearchBox />
         </div>
 
