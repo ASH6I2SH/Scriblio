@@ -63,73 +63,85 @@ const Topbar = () => {
 
   return (
     <div className="flex justify-between items-center h-16 fixed w-full z-20 bg-white px-5 border-b">
-      <div className="flex justify-center items-center gap-2">
-        <button onClick={toggleSidebar} className="md:hidden text-2xl" type="button">
+      <div className="flex items-center gap-1 md:gap-2">
+        <button
+          onClick={toggleSidebar}
+          className="md:hidden text-2xl"
+          type="button"
+        >
           <AiOutlineMenu />
         </button>
-        <Link to={RouteIndex}><img src={logo} alt="logo" className="md:w-auto w-48" /></Link>
+        <Link to={RouteIndex}>
+          <img
+            src={logo}
+            alt="logo"
+            className="h-8 w-auto max-w-[150px] md:max-w-none"
+          />
+        </Link>
       </div>
+
+
       <div className="w-[500px]">
+      <div className="relative w-full max-w-md">
+
         <div
-          className={`md:relative md:block absolute bg-white left-0 w-full md:top-0 top-16 md:p-0 p-5 ${
+          className={`md:relative md:block absolute bg-white left-0 w-full md:top-0 top-16 md:p-0 p-2 ${
             showSearch ? "block" : "hidden"
           }`}
         >
           <SearchBox />
         </div>
       </div>
-      <button
-        onClick={toggleSearch}
-        type="button"
-        className="md:hidden block mr-4"
-      >
-        <IoMdSearch className="text-4xl" />
-      </button>
-      <div>
-        {!user.isLoggedIn ? (
-          <Button className="rounded-full" asChild>
-            <Link to={RouteSignIn}>
-              <MdLogin />
-              Sign In
-            </Link>
-          </Button>
-        ) : (
-          <>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Avatar>
-                  <AvatarImage src={user.user.avatar || usericon} />
-                  <AvatarFallback></AvatarFallback>
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>
-                  <p>{user.user.name}</p>
-                  <p className="text-sm">{user.user.email}</p>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer" asChild>
-                  <Link to="/profile">
-                    <FaRegUser /> Profile
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer" asChild>
-                  <Link to={RouteBlogAdd}>
-                    <FaPlus /> Create Blog
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  className="cursor-pointer"
-                  onClick={handleLogout}
-                >
-                  <IoLogInOutline className="text-red-500" /> Logout
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </>
-        )}
+
+
       </div>
+      <div className="flex items-center gap-3">
+  <button
+    onClick={toggleSearch}
+    type="button"
+    className="md:hidden block"
+  >
+    <IoMdSearch className="text-2xl md:text-3xl" />
+
+  </button>
+  <div>
+    {!user.isLoggedIn ? (
+      <Button className="rounded-full" asChild>
+        <Link to={RouteSignIn}>
+          <MdLogin />
+          Sign In
+        </Link>
+      </Button>
+    ) : (
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <Avatar>
+            <AvatarImage src={user.user.avatar || usericon} />
+            <AvatarFallback />
+          </Avatar>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>
+            <p>{user.user.name}</p>
+            <p className="text-sm">{user.user.email}</p>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <Link to="/profile"><FaRegUser /> Profile</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link to={RouteBlogAdd}><FaPlus /> Create Blog</Link>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onClick={handleLogout}>
+            <IoLogInOutline className="text-red-500" /> Logout
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )}
+  </div>
+</div>
+
     </div>
   );
 };

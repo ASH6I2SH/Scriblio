@@ -25,7 +25,7 @@ export const useFetch = (url, options = {}, dependencies = []) => {
             }
         }
         fetData()
-    }, dependencies)
+    }, [url, JSON.stringify(options), ...dependencies])
  
 
     return { data, loading, error }

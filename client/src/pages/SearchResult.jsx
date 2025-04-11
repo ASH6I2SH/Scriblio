@@ -7,6 +7,7 @@ import { useSearchParams } from "react-router-dom";
 const SearchResult = () => {
   const [searchParams] = useSearchParams();
   const q = searchParams.get("q");
+  console.log(q);
   const {
     data: blogData,
     loading,
@@ -15,7 +16,7 @@ const SearchResult = () => {
     method: "get",
     credentials: "include",
   });
-
+console.log(blogData)
   return (
     <div className="p-1">
       <div className="flex items-center gap-3 text-2xl font-bold text-violet-500 border-b pb-3 mb-5">
