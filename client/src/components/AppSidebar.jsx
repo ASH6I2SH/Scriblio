@@ -32,7 +32,7 @@ import { useFetch } from "@/hooks/useFetch";
 import { useSelector } from "react-redux";
 
 const AppSidebar = () => {
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
 
   const { data: categoryData } = useFetch(
     `${getEnv("VITE_API_BASE_URL")}/category/all-category`,
@@ -43,10 +43,23 @@ const AppSidebar = () => {
   );
   return (
     <Sidebar>
-      <SidebarHeader className="bg-white">
-        <img width={120} src={logo} alt="logoImage" />
+      <SidebarHeader>
+        <div className="logo">
+          <Link
+            to={RouteIndex}
+            className="font-bold tracking-tighter flex items-center gap-[2px] sm:gap-1 text-[1rem] sm:text-[1rem]"
+          >
+            <span className="text-[#7420E6] text-1xl sm:text-2xl">S</span>
+            <span>CR</span>
+            <span className="italic">I</span>
+            <span className="text-[#7420E6]">B</span>
+            <span>L</span>
+            <span className="text-[#7420E6] italic">I</span>
+            <span className="text-[#6a00ff] text-1xl sm:text-2xl">O</span>
+          </Link>
+        </div>
       </SidebarHeader>
-      <SidebarContent className="bg-white">
+      <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
@@ -61,14 +74,16 @@ const AppSidebar = () => {
               <>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
-                    
-                    <Link to={RouteBlog}><GrBlog /> Blogs</Link>
+                    <Link to={RouteBlog}>
+                      <GrBlog /> Blogs
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
-                    
-                    <Link to={RouteCommentDetails}><FaRegComments /> Comments</Link>
+                    <Link to={RouteCommentDetails}>
+                      <FaRegComments /> Comments
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </>
@@ -79,15 +94,18 @@ const AppSidebar = () => {
               <>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
-                    
-                    <Link to={RouteCategoryDetails}><BiCategory /> Categories</Link>
+                    <Link to={RouteCategoryDetails}>
+                      <BiCategory /> Categories
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
 
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
-                   
-                    <Link to={RouteUser}> <LuUsers /> Users</Link>
+                    <Link to={RouteUser}>
+                      {" "}
+                      <LuUsers /> Users
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </>

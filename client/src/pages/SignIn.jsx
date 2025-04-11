@@ -29,7 +29,6 @@ import { getEnv } from "@/helpers/getEnv";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/redux/user/user.slice";
 import GoogleLogin from "@/components/GoogleLogin";
-import logo from "@/assets/images/logo-white.png";
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -79,11 +78,21 @@ const SignIn = () => {
     <div className="flex justify-center items-center h-screen ">
       <Card className="w-[400px] p-5">
         <CardHeader>
-          <div className="flex justify-center items-center mb-2">
-          <Link to={RouteIndex}>
-            <img src={logo} alt="" />
-          </Link>
+          <div className="logo flex justify-center items-center mb-2">
+            <Link
+              to={RouteIndex}
+              className="font-bold tracking-tighter flex items-center gap-[2px] sm:gap-1 text-[1rem] sm:text-[1rem]"
+            >
+              <span className="text-[#7420E6] text-1xl sm:text-2xl">S</span>
+              <span>CR</span>
+              <span className="italic">I</span>
+              <span className="text-[#7420E6]">B</span>
+              <span>L</span>
+              <span className="text-[#7420E6] italic">I</span>
+              <span className="text-[#6a00ff] text-1xl sm:text-2xl">O</span>
+            </Link>
           </div>
+
           <CardTitle className="text-2xl font-bold text-center">
             Login Into Account
           </CardTitle>
@@ -92,7 +101,9 @@ const SignIn = () => {
         <div>
           <GoogleLogin />
           <div className="border my-5 flex justify-center items-center">
-            <span className="absolute bg-white text-sm ">Or</span>
+            <span className="absolute bg-background backdrop-opacity-100 text-sm ">
+              Or
+            </span>
           </div>
         </div>
 
