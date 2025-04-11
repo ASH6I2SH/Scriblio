@@ -86,7 +86,7 @@ const Topbar = () => {
         >
           <AiOutlineMenu />
         </button>
-        <div className="logo">
+        <div className="logo ml-1">
           <Link
             to={RouteIndex}
             className="font-bold tracking-tighter flex items-center gap-[2px] sm:gap-1 text-[1rem] sm:text-[1rem]"

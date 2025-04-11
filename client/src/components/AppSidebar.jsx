@@ -44,7 +44,7 @@ const AppSidebar = () => {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="logo">
+        <div className="logo p-4">
           <Link
             to={RouteIndex}
             className="font-bold tracking-tighter flex items-center gap-[2px] sm:gap-1 text-[1rem] sm:text-[1rem]"
@@ -62,7 +62,7 @@ const AppSidebar = () => {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            <SidebarMenuItem>
+            <SidebarMenuItem > {/*className="mt-4"*/}
               <SidebarMenuButton asChild>
                 <Link to={RouteIndex}>
                   <IoHomeOutline /> Home
