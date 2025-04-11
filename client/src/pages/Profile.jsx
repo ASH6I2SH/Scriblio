@@ -113,7 +113,8 @@ const Profile = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="flex justify-center items-center w-full h-full p-5">
+    <div className="flex justify-center items-center w-full h-full  p-5 min-h-[calc(100vh-6.5rem)]">
+
       <Card className="w-[75%] min-h-full flex flex-col gap-0">
         <div className="flex justify-center">
           <Dropzone onDrop={(acceptedFiles) => handleFileSelection(acceptedFiles)}>
