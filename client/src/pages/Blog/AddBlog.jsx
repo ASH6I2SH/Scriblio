@@ -191,7 +191,7 @@ const AddBlog = () => {
               />
 
               {/* Featured Image */}
-              <div>
+              <div className="">
                 <span className="mb-2 block font-medium">Featured Image</span>
                 <Dropzone
                   onDrop={(acceptedFiles) => handleFileSelection(acceptedFiles)}
@@ -199,7 +199,7 @@ const AddBlog = () => {
                   {({ getRootProps, getInputProps }) => (
                     <div {...getRootProps()} className="cursor-pointer">
                       <input {...getInputProps()} />
-                      <div className="w-full max-w-xs h-40 border-2 border-dashed rounded flex items-center justify-center overflow-hidden bg-gray-50">
+                      <div className="w-full max-w-xs h-40 border-2 border-dashed rounded flex items-center justify-center overflow-hidden bg-gray-50 ">
                         {filePreview ? (
                           <img
                             src={filePreview}
@@ -207,7 +207,7 @@ const AddBlog = () => {
                             className="h-full object-cover"
                           />
                         ) : (
-                          <span className="text-sm text-gray-400">
+                          <span className="text-sm text-gray-400 bg-[#D2D2D2] p-1 rounded">
                             Click to upload
                           </span>
                         )}

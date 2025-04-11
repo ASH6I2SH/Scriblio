@@ -165,8 +165,8 @@ body{
 
 /* .editor-container_include-block-toolbar {
   
-  margin-left: 42px;
-  
+margin-left: 42px;
+
 } */
 
 .editor_container__word-count .ck-word-count {
@@ -188,9 +188,12 @@ body{
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 	border-top: none;
+  background-color: white;
 }
 
 .editor-container_include-word-count.editor-container_classic-editor .editor-container__editor .ck-editor .ck-editor__editable {
+  color: black;
+  background-color: rgb(210, 210, 210);
   border-radius: 0;
 }
 .ck-editor__editable_inline {
@@ -204,7 +207,7 @@ body{
   .main-container {
     padding: 0.5rem;
   }
-
+  
   .editor-container_classic-editor .editor-container__editor {
     width: 100%;
   }
