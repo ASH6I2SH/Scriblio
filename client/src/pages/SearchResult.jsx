@@ -18,7 +18,7 @@ const SearchResult = () => {
   });
 console.log(blogData)
   return (
-    <div className="p-1">
+    <div className="p-4">
       <div className="flex items-center gap-3 text-2xl font-bold text-violet-500 border-b pb-3 mb-5">
         <h4>Search Result For: {q} </h4>
       </div>

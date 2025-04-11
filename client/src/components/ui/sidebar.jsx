@@ -342,17 +342,32 @@ function SidebarSeparator({
 
 function SidebarContent({
   className,
+  children,
   ...props
 }) {
+  const { setOpenMobile } = useSidebar();
+  const isMobile = useIsMobile();
+
+  // 👇 Automatically closes the sidebar if clicked (only on mobile)
+  const handleClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
+
   return (
-    (<div
+    <div
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
         "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
         className
       )}
-      {...props} />)
+      onClick={handleClick} // 👈 This is the magic line
+      {...props}
+    >
+      {children}
+    </div>
   );
 }
 

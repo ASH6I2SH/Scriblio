@@ -102,18 +102,25 @@ const Topbar = () => {
         </div>
       </div>
 
-      <div className="w-[500px]">
-        <div className="relative w-full max-w-md">
+      {/* Search Box Section */}
+      <div className="flex-1 flex justify-center">
+        <div className="relative w-full max-w-2xl px-4 hidden md:block">
+          <SearchBox />
+        </div>
+
+        {/* Mobile Search Toggle */}
+        {showSearch && (
           <div
-            className={`md:relative md:block absolute  rounded-full backdrop-blur-lg left-0 w-full md:top-0 top-16 md:p-0 p-2 ${
-              showSearch ? "block" : "hidden"
-            }`}
+            className="absolute top-16 left-0 w-full px-4 z-50 md:hidden"
             ref={searchRef}
           >
-            <SearchBox />
+            <div className="rounded-xl bg-background p-2 shadow-lg">
+              <SearchBox />
+            </div>
           </div>
-        </div>
+        )}
       </div>
+
       <div className="flex items-center gap-3">
         <button
           onClick={toggleSearch}

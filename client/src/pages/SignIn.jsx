@@ -75,7 +75,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex justify-center items-center h-screen px-4 ">
       <Card className="w-[400px] p-5">
         <CardHeader>
           <div className="logo flex justify-center items-center mb-2">
@@ -98,16 +98,16 @@ const SignIn = () => {
           </CardTitle>
         </CardHeader>
 
-        <div>
+
+        <CardContent>
           <GoogleLogin />
+        <div>
           <div className="border my-5 flex justify-center items-center">
-            <span className="absolute bg-background backdrop-opacity-100 text-sm ">
+            <span className="absolute bg-background backdrop-opacity-100 text-sm rounded-full">
               Or
             </span>
           </div>
         </div>
-
-        <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="mb-3">
