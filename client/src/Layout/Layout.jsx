@@ -8,15 +8,17 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <SidebarProvider>
-      <Topbar />
-      <AppSidebar />
-      <main className="w-full h-screen">
-        <div className="h-[4rem]"></div>
-        <div className="min-h-[calc(100%-7.5rem)]">
+      <div className="flex flex-col min-h-screen w-full">
+        <Topbar />
+        <AppSidebar />
+        
+        {/* Content wrapper that grows to fill space */}
+        <div className="flex-1">
           <Outlet />
         </div>
-        <Footer className="h-[4rem]" />
-      </main>
+
+        <Footer />
+      </div>
     </SidebarProvider>
   );
 };
