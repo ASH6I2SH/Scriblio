@@ -84,7 +84,7 @@ const AddBlog = () => {
     try {
       const newValues = { ...values, author: user.user._id };
       if (!file) {
-        showToast("error", "Feature image required.");
+        return showToast("error", "Feature image required.");
       }
       const formData = new FormData();
       formData.append("file", file);
