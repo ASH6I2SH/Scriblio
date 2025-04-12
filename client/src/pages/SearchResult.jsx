@@ -3,6 +3,7 @@ import { getEnv } from "@/helpers/getEnv";
 import { useFetch } from "@/hooks/useFetch";
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import Loading from '@/components/Loading'
 
 const SearchResult = () => {
   const [searchParams] = useSearchParams();
@@ -16,7 +17,7 @@ const SearchResult = () => {
     method: "get",
     credentials: "include",
   });
-console.log(blogData)
+  if (loading) return <Loading />
   return (
     <div className="p-4">
       <div className="flex items-center gap-3 text-2xl font-bold text-violet-500 border-b pb-3 mb-5">
