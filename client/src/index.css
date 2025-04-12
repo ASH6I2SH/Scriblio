@@ -215,9 +215,10 @@ margin-left: 42px;
 
 /* -------------------CSS FOR EDITOR ENDS------------------------*/
 
-@media (max-width: 1006px) {
-  .index {
-    
-  }
 
+
+@media (min-width: 1006px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
 }

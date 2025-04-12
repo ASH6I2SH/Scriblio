@@ -16,7 +16,7 @@ const Index = () => {
 
   if (loading) return <Loading />;
   return (
-    <div className="index grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 p-3">
+    <div className="blog-grid index grid  sm:grid-cols-2 grid-cols-1 gap-10 p-3">
       {blogData && blogData.blog.length > 0 ? (
         blogData.blog.map((blog) => <BlogCard key={blog._id} props={blog} />)
       ) : (
@@ -26,4 +26,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Index;  
