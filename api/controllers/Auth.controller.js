@@ -40,7 +40,7 @@ export const Login = async (req, res, next) => {
       return next(handleError(405, "Invalid login credentials."));
     }
     const hashedPassword = user.password;
-    const comparePassword = bcryptjs.compare(password, hashedPassword)
+    const comparePassword = bcryptjs.compare(password, hashedPassword);
     if (!comparePassword)
       return next(handleError(404, "Invalid login credentials."));
 
@@ -49,6 +49,7 @@ export const Login = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         avatar: user.avatar,
+        role: user.role,
       },
       process.env.JWT_SECRET
     );
@@ -82,7 +83,7 @@ export const GoogleLogin = async (req, res, next) => {
     if (!user) {
       //create new user
       const password = Math.round().toString();
-      const hashedPassword = bcryptjs.hashSync(password)
+      const hashedPassword = bcryptjs.hashSync(password);
       const newUser = new User({
         name,
         email,
@@ -97,6 +98,7 @@ export const GoogleLogin = async (req, res, next) => {
         _id: user._id,
         name: user.name,
         avatar: user.avatar,
+        role: user.role,
       },
       process.env.JWT_SECRET
     );
