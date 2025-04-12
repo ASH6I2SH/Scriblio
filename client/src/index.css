@@ -215,3 +215,9 @@ margin-left: 42px;
 
 /* -------------------CSS FOR EDITOR ENDS------------------------*/
 
+@media (max-width: 1006px) {
+  .index {
+    
+  }
+
+}
