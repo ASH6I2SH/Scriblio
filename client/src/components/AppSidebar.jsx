@@ -16,11 +16,12 @@ import logo from "@/assets/images/logo-white.png";
 import { IoHomeOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 import { GrBlog } from "react-icons/gr";
-import { FaRegComments } from "react-icons/fa";
+import { FaPlus, FaRegComments } from "react-icons/fa";
 import { LuUsers } from "react-icons/lu";
 import { GoDot } from "react-icons/go";
 import {
   RouteBlog,
+  RouteBlogAdd,
   RouteBlogByCategory,
   RouteCategoryDetails,
   RouteCommentDetails,
@@ -63,11 +64,16 @@ const AppSidebar = () => {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              {" "}
-              {/*className="mt-4"*/}
               <SidebarMenuButton asChild>
                 <Link to={RouteIndex}>
                   <IoHomeOutline /> Home
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link to={RouteBlogAdd}>
+                  <FaPlus /> Create Blog
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
