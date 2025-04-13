@@ -12,7 +12,7 @@ const Layout = () => {
       <SidebarProvider>
         <Topbar />
         <AppSidebar />
-        <main className="w-full h-full  flex flex-col">
+        <main className="w-full flex flex-col">
           <div className="h-[4rem]"></div>
           <div className="flex-1">
             <Outlet />
