@@ -41,8 +41,8 @@ const Comments = () => {
 
     if (loading) return <Loading />
     return (
-        <div>
-            <Card>
+        <div className="w-full px-4 py-6 flex justify-center overflow-x-hidden">
+            <Card className="w-full max-w-4xl pt-5">
 
                 <CardContent>
                     <Table>
